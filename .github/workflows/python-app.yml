@@ -22,4 +22,4 @@ jobs:
     - name: Test with pytest
       run: |
         pip install pytest pytest-cov
-        pytest --cov=/workspaces/SE/.github/workflows/tests --cov-report=xml --cov-report=html
+        pytest --cov=/workspaces/SE/tests --cov-report=xml --cov-report=html 
