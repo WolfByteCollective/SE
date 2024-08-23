@@ -1,0 +1,6 @@
+from HW1 import NumOperations  
+def test_operations_valid():
+    assert NumOperations(1,2) == [3, -1, 2, 0.5]
+
+def test_invalid_division():
+    assert NumOperations(1, 4) == [6, -3, 4, 0.2]
