@@ -1,6 +1,0 @@
-steps:
-- uses: actions/checkout@v4
-- name: Test with pytest
-  run: |
-    pip install pytest pytest-cov
-    pytest test_HW1.py
