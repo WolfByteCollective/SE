@@ -4,5 +4,3 @@ def NumOperations(a,b):
     product = a*b
     div = a/b
     return [sum, diff, product, div]
-
-print(NumOperations(5,1))
