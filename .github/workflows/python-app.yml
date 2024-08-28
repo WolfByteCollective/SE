@@ -11,7 +11,7 @@ jobs:
     - name: Install and run tests with pytest
       run: |
         pip install pytest pytest-cov
-        p=tests --cov-report=xml --cov-report=html
+        pytest=tests --cov-report=xml --cov-report=html
 
     - name: Upload coverage report as an artifact
       uses: actions/upload-artifact@v3
