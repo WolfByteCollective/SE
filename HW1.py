@@ -4,6 +4,3 @@ def NumOperations(a,b):
     product = a*b
     div = a/b
     return [sum, diff, product, div]
-
-def hello():
-    print("Hello")
