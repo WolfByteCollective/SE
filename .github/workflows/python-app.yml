@@ -43,4 +43,4 @@ jobs:
 
       - name: Run Pylint
         run: |
-          pylint /workspaces/SE/HW2/
+          pylint .//HW2/
