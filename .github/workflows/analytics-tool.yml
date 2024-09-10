@@ -1,0 +1,44 @@
+name: Lint and Bandit tools
+
+on:
+  push:
+    branches: [ "main" ]
+jobs:
+  static_analytic_tools:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout repository
+          uses: actions/checkout@v2
+
+        - name: Set up Python
+          uses: actions/setup-python@v2
+          with:
+            python-version: '3.x'
+
+        - name: Install dependencies
+          run: |
+            pip install pylint
+
+        - name: Run Pylint
+          run: |
+            pylint .//HW2/
+
+        - name: Install dependencies
+          run: |
+            pip install bandit
+
+        - name: Run Bandit
+          run: |
+            bandit .//HW2/
+
+        - name: install autopep8
+          run: |
+            pip install autopep8
+        
+        - name: configure autopep8
+          run: |
+            autopep8 .//HW2/hw2_debugging.py --in-place
+        
+        - name: configure autopep8
+          run: |
+            autopep8 .//HW2/rand.py --in-place
