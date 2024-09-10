@@ -1,8 +1,8 @@
-name: Tests
+name: Tests and lint
 on:
   push:
     branches: [ "main" ]
-
+  
 jobs:
   run_pytest:
     runs-on: ubuntu-latest
@@ -25,4 +25,22 @@ jobs:
         token: ${{ secrets.CODECOV_TOKEN }}
         files: ./coverage.xml
         flags: unittests
-        name: codecov-coverage
+        name: codecov-coverage      
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          pip install pylint
+
+      - name: Run Pylint
+        run: |
+          pylint .//HW2/
