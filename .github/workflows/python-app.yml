@@ -25,8 +25,9 @@ jobs:
         token: ${{ secrets.CODECOV_TOKEN }}
         files: ./coverage.xml
         flags: unittests
-        name: codecov-coverage      
-  lint:
+        name: codecov-coverage   
+           
+  static_analytic_tools:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
