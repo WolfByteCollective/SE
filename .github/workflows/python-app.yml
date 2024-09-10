@@ -45,7 +45,7 @@ jobs:
         run: |
           pylint .//HW2/
 
-        name: Install dependencies
+      - name: Install dependencies
         run: |
           pip install bandit
 
