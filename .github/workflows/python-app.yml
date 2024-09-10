@@ -44,3 +44,11 @@ jobs:
       - name: Run Pylint
         run: |
           pylint .//HW2/
+
+        name: Install dependencies
+        run: |
+          pip install bandit
+
+      - name: Run Bandit
+        run: |
+          bandit .//HW2/
