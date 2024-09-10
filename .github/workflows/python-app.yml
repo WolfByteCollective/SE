@@ -1,8 +1,8 @@
-name: Tests
+name: Tests and lint
 on:
   push:
     branches: [ "main" ]
-
+  
 jobs:
   run_pytest:
     runs-on: ubuntu-latest
@@ -25,13 +25,7 @@ jobs:
         token: ${{ secrets.CODECOV_TOKEN }}
         files: ./coverage.xml
         flags: unittests
-        name: codecov-coverage
-
-name: Pylint CI
-
-on: [push, pull_request]
-
-jobs:
+        name: codecov-coverage      
   lint:
     runs-on: ubuntu-latest
     steps:
