@@ -53,3 +53,15 @@ jobs:
       - name: Run Bandit
         run: |
           bandit .//HW2/
+
+      - name: install autopep8
+        run: |
+          pip install autopep8
+      
+      - name: configure autopep8
+        run: |
+          autopep8 .//HW2/hw2_debugging.py --in-place
+      
+      - name: configure autopep8
+        run: |
+          autopep8 .//HW2/rand.py --in-place
