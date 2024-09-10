@@ -1,12 +1,9 @@
 """ HW2 rand.py"""
-import subprocess
+
+import secrets
 
 def random_array(arr):
-    """Function of random array"""
-    shuffled_num = None
-    for i, in enumerate(arr):
-        shuffled_num = subprocess.run(["shuf", "-i1-20", "-n1"], capture_output=True, check=True)
-        arr[i] = int(shuffled_num.stdout)
+    """Function to shuffle array with cryptographically secure random numbers"""
+    for i in range(len(arr)):
+        arr[i] = secrets.randbelow(20) + 1  # Generate secure random number between 1 and 20
     return arr
-
-
