@@ -1,5 +1,5 @@
 ''' This is HW2 for SE'''
-import HW2.rand as rand
+import rand
 def merge_sort(arr):
     """Function merge sort"""
     if len(arr) == 1:
