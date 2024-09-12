@@ -19,6 +19,6 @@ jobs:
           run: |
             pip install autopep8
         
-        - name: run autopep8 in check mode to ensure PEP 8 complaince 
+        - name: run autopep8 to ensure PEP 8 complaince 
           run: |
-            find -type f -name '*.py' ! -path '*/migrations/*' -exec autopep8 --in-place --aggressive --aggressive '{}' \;
+            autopep8 --diff --aggressive --aggressive --exit-code /workspaces/SE/HW2/hw2_debugging.py /workspaces/SE/HW2/rand.py
