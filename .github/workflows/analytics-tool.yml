@@ -60,7 +60,7 @@ jobs:
           fi
 
       - name: Commit badges to GitHub Pages
-        uses: EndBug/add-and-commit@v10
+        uses: EndBug/add-and-commit@v9
         with:
           add: 'badge-pylint.txt badge-bandit.txt'
           message: 'Update badges'
