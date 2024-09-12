@@ -5,7 +5,6 @@
 ![Test Status](https://github.com/WolfByteCollective/SE/actions/workflows/python-app.yml/badge.svg)
 [![Codecov](https://codecov.io/gh/WolfByteCollective/SE/branch/main/graph/badge.svg?token=ZVK61GVXZP)](https://codecov.io/gh/WolfByteCollective/SE)
 
-Static Analysis Tools:\
 
 [![Lint Tool](https://github.com/WolfByteCollective/SE/actions/workflows/pylint-tool.yml/badge.svg)](https://github.com/WolfByteCollective/SE/actions/workflows/pylint-tool.yml)
 [![Bandit Tool](https://github.com/WolfByteCollective/SE/actions/workflows/bandit-tool.yml/badge.svg)](https://github.com/WolfByteCollective/SE/actions/workflows/bandit-tool.yml)
