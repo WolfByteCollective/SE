@@ -21,4 +21,4 @@ jobs:
         
         - name: run autopep8 to ensure PEP 8 complaince 
           run: |
-            autopep8 --diff --aggressive --aggressive --exit-code /workspaces/SE/HW2/hw2_debugging.py /workspaces/SE/HW2/rand.py
+            find . -type f -name "*.py" ! -path '*/migrations/*' -exec autopep8 --exit-code --aggressive --aggressive --diff '{}' \;

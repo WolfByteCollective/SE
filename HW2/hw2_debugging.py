@@ -12,7 +12,6 @@ def merge_sort(arr):
 
     return recombine(merge_sort(arr[:half]), merge_sort(arr[half:]))
 
-
 def recombine(left_arr, right_arr):
     '''Function to recombine the sorted arrays'''
 
