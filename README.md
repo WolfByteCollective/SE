@@ -4,4 +4,9 @@
 ![Python Version](https://img.shields.io/badge/Python-3.13-green.svg)
 ![Test Status](https://github.com/WolfByteCollective/SE/actions/workflows/python-app.yml/badge.svg)
 [![Codecov](https://codecov.io/gh/WolfByteCollective/SE/branch/main/graph/badge.svg?token=ZVK61GVXZP)](https://codecov.io/gh/WolfByteCollective/SE)
-[![Lint and Bandit tools](https://github.com/WolfByteCollective/SE/actions/workflows/analytics-tool.yml/badge.svg)](https://github.com/WolfByteCollective/SE/actions/workflows/analytics-tool.yml)
+
+Static Analysis Tools:\
+
+[![Lint Tool](https://github.com/WolfByteCollective/SE/actions/workflows/pylint-tool.yml/badge.svg)](https://github.com/WolfByteCollective/SE/actions/workflows/pylint-tool.yml)
+[![Bandit Tool](https://github.com/WolfByteCollective/SE/actions/workflows/bandit-tool.yml/badge.svg)](https://github.com/WolfByteCollective/SE/actions/workflows/bandit-tool.yml)
+[![Autopep8 Tool](https://github.com/WolfByteCollective/SE/actions/workflows/Autopep8-tool.yml/badge.svg)](https://github.com/WolfByteCollective/SE/actions/workflows/Autopep8-tool.yml)
