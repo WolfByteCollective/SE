@@ -5,5 +5,3 @@
 ![Test Status](https://github.com/WolfByteCollective/SE/actions/workflows/python-app.yml/badge.svg)
 [![Codecov](https://codecov.io/gh/WolfByteCollective/SE/branch/main/graph/badge.svg?token=ZVK61GVXZP)](https://codecov.io/gh/WolfByteCollective/SE)
 [![Lint and Bandit tools](https://github.com/WolfByteCollective/SE/actions/workflows/analytics-tool.yml/badge.svg)](https://github.com/WolfByteCollective/SE/actions/workflows/analytics-tool.yml)
-[![Bandit Status](https://github.com/WolfByteCollective/SE/actions/workflows/analytics-tool.yml/badge.svg)](https://github.com/WolfByteCollective/SE/badge-pylint.txt)
-[![PyLint Status](https://github.com/WolfByteCollective/SE/actions/workflows/analytics-tool.yml/badge.svg)](https://github.com/WolfByteCollective/SE/badge-bandit.txt)

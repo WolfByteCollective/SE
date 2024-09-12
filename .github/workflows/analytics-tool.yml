@@ -5,65 +5,40 @@ on:
     branches: [ "main" ]
 jobs:
   static_analytic_tools:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      actions: read
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout repository
+          uses: actions/checkout@v2
 
-      - name: Set up Python
-        uses: actions/setup-python@v3
-        with:
-          python-version: '3.x'
+        - name: Set up Python
+          uses: actions/setup-python@v2
+          with:
+            python-version: '3.x'
 
-      - name: Install Pylint, Bandit, and autopep8
-        run: |
-          pip install pylint bandit autopep8
+        - name: Install dependencies
+          run: |
+            pip install pylint
 
-      - name: Run Pylint
-        id: pylint
-        run: |
-          pylint .//HW2/ --output-format=json > pylint-report.json || exit 0
+        - name: Run Pylint
+          run: |
+            pylint .//HW2/
 
-      - name: Run Bandit
-        id: bandit
-        run: |
-          bandit .//HW2/ -f json -o bandit-report.json || exit 0
+        - name: Install dependencies
+          run: |
+            pip install bandit
 
-      - name: Run autopep8 on files
-        run: |
-          autopep8 .//HW2/hw2_debugging.py --in-place
-          autopep8 .//HW2/rand.py --in-place
+        - name: Run Bandit
+          run: |
+            bandit .//HW2/
 
-      - name: Upload Pylint and Bandit reports
-        uses: actions/upload-artifact@v3
-        with:
-          name: reports
-          path: |
-            pylint-report.json
-            bandit-report.json
-
-      - name: Generate Badges
-        run: |
-          # Process the reports to determine badge status
-          pylint_status=$(jq '.[] | select(.score < 5)' pylint-report.json | wc -l)
-          if [ "$pylint_status" -gt 0 ]; then
-            echo "Pylint: Failing" > badge-pylint.txt
-          else
-            echo "Pylint: Passing" > badge-pylint.txt
-          fi
-
-          bandit_status=$(jq '.results[] | select(.issue_severity == "high")' bandit-report.json | wc -l)
-          if [ "$bandit_status" -gt 0 ]; then
-            echo "Bandit: Failing" > badge-bandit.txt
-          else
-            echo "Bandit: Passing" > badge-bandit.txt
-          fi
-
-      - name: Commit badges to GitHub Pages
-        uses: EndBug/add-and-commit@v9
-        with:
-          add: 'badge-pylint.txt badge-bandit.txt'
-          message: 'Update badges'
+        - name: install autopep8
+          run: |
+            pip install autopep8
+        
+        - name: configure autopep8
+          run: |
+            autopep8 .//HW2/hw2_debugging.py --in-place
+        
+        - name: configure autopep8
+          run: |
+            autopep8 .//HW2/rand.py --in-place
