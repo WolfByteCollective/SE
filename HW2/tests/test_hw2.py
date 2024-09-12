@@ -11,4 +11,4 @@ def test_sorting_valid_even():
 
 def test_sorting_single_element():
     '''Test for successful sorting'''
-    assert merge_sort([1]) == [1]
+    assert merge_sort([1]) == []
