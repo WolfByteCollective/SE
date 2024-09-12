@@ -1,7 +1,8 @@
-''' This is HW2 for SE'''
+''' This file contains the functions to perform merge sort on an array'''
 import rand
 def merge_sort(arr):
-    """Function merge sort"""
+    """Function to merge sort the array"""
+
     if len(arr) == 1:
         return arr
 
@@ -9,7 +10,8 @@ def merge_sort(arr):
 
     return recombine(merge_sort(arr[:half]), merge_sort(arr[half:]))
 def recombine(left_arr, right_arr):
-    """Function recombine"""
+    '''Function to recombine the sorted arrays'''
+
     left_index = 0
     right_index = 0
     merge_arr = [None] * (len(left_arr) + len(right_arr))
