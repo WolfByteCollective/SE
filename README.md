@@ -9,4 +9,4 @@ Static Analysis Tools:\
 
 [![Lint Tool](https://github.com/WolfByteCollective/SE/actions/workflows/pylint-tool.yml/badge.svg)](https://github.com/WolfByteCollective/SE/actions/workflows/pylint-tool.yml)
 [![Bandit Tool](https://github.com/WolfByteCollective/SE/actions/workflows/bandit-tool.yml/badge.svg)](https://github.com/WolfByteCollective/SE/actions/workflows/bandit-tool.yml)
-[![Autopep8 Tool](https://github.com/WolfByteCollective/SE/actions/workflows/Autopep8-tool.yml/badge.svg)](https://github.com/WolfByteCollective/SE/actions/workflows/Autopep8-tool.yml)
+[![Autopep8 Tool](https://github.com/WolfByteCollective/SE/actions/workflows/autopep8-tool.yml/badge.svg)](https://github.com/WolfByteCollective/SE/actions/workflows/autopep8-tool.yml)
