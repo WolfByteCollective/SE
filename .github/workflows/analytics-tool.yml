@@ -8,14 +8,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v3
         with:
           python-version: '3.x'
 
-      - name: Install Pylint and Bandit
+      - name: Install Pylint, Bandit, and autopep8
         run: |
           pip install pylint bandit autopep8
 
@@ -29,8 +29,13 @@ jobs:
         run: |
           bandit .//HW2/ -f json -o bandit-report.json || exit 0
 
+      - name: Run autopep8 on files
+        run: |
+          autopep8 .//HW2/hw2_debugging.py --in-place
+          autopep8 .//HW2/rand.py --in-place
+
       - name: Upload Pylint and Bandit reports
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: reports
           path: |
@@ -40,9 +45,6 @@ jobs:
       - name: Generate Badges
         run: |
           # Process the reports to determine badge status
-          # This could involve creating simple SVGs or markdown files for badges
-
-          # Example of generating Pylint badge
           pylint_status=$(jq '.[] | select(.score < 5)' pylint-report.json | wc -l)
           if [ "$pylint_status" -gt 0 ]; then
             echo "Pylint: Failing" > badge-pylint.txt
@@ -50,7 +52,6 @@ jobs:
             echo "Pylint: Passing" > badge-pylint.txt
           fi
 
-          # Example of generating Bandit badge
           bandit_status=$(jq '.results[] | select(.issue_severity == "high")' bandit-report.json | wc -l)
           if [ "$bandit_status" -gt 0 ]; then
             echo "Bandit: Failing" > badge-bandit.txt
@@ -59,7 +60,7 @@ jobs:
           fi
 
       - name: Commit badges to GitHub Pages
-        uses: EndBug/add-and-commit@v9
+        uses: EndBug/add-and-commit@v10
         with:
           add: 'badge-pylint.txt badge-bandit.txt'
           message: 'Update badges'
