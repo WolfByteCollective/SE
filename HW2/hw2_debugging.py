@@ -1,5 +1,7 @@
 ''' This file contains the functions to perform merge sort on an array'''
 import rand
+
+
 def merge_sort(arr):
     """Function to merge sort the array"""
 
@@ -9,6 +11,8 @@ def merge_sort(arr):
     half = len(arr)//2
 
     return recombine(merge_sort(arr[:half]), merge_sort(arr[half:]))
+
+
 def recombine(left_arr, right_arr):
     '''Function to recombine the sorted arrays'''
 
@@ -28,6 +32,7 @@ def recombine(left_arr, right_arr):
     for i in range(left_index, len(left_arr)):
         merge_arr[i + right_index] = left_arr[i]
     return merge_arr
+
 
 arr1 = rand.random_array([None] * 20)
 arr_out = merge_sort(arr1)
