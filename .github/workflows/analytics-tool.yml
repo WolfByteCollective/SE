@@ -63,15 +63,3 @@ jobs:
         with:
           add: 'badge-pylint.txt badge-bandit.txt'
           message: 'Update badges'
-
-      - name: install autopep8
-          run: |
-            pip install autopep8
-        
-        - name: configure autopep8
-          run: |
-            autopep8 .//HW2/hw2_debugging.py --in-place
-        
-        - name: configure autopep8
-          run: |
-            autopep8 .//HW2/rand.py --in-place
