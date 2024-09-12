@@ -1,4 +1,4 @@
-""" This file contains the helper function to generate random numbers in a given range"""
+"""Helper function to generate random numbers"""
 
 import secrets
 
