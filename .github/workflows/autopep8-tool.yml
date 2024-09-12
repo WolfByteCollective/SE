@@ -22,4 +22,3 @@ jobs:
         - name: run autopep8 in check mode to ensure PEP 8 complaince 
           run: |
             find . -type f -name "*.py" ! -path '*/migrations/*' -exec autopep8 --exit-code --aggressive --aggressive --diff '{}' \;
-            continue-on-error: false
