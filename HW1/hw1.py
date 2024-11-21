@@ -1,4 +1,4 @@
-'''This is HW1 for SE'''
+
 
 
 def num_operations(a, b):
